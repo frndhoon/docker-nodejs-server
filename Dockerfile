@@ -18,5 +18,9 @@ COPY . .
 # 포트 노출
 EXPOSE 8080
 
+# 노드 사용자로 실행 (노드 사용자는 루트 권한이 없으니 좀 더 안전함)
+# node는 FROM 명령어에서 지정한 이미지의 사용자
+USER node
+
 # 서버 실행 (CMD는 마지막 명령어)
 CMD ["node", "server.js"]
